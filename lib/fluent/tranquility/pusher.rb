@@ -9,11 +9,13 @@ module Fluent
       end
 
       def call(data)
-        adapter.post("/v1/post/#{dataset}") do |req|
+        res = adapter.post("/v1/post/#{dataset}") do |req|
           req.headers['Content-Encoding'] = 'gzip'
           req.headers['Content-Type'] = 'text/plain'
           req.body = data
         end
+
+        res.success?
       end
 
       private
