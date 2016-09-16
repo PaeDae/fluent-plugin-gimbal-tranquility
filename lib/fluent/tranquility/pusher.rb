@@ -1,15 +1,15 @@
 module Fluent
   module Tranquility
     class Pusher
-      attr_accessor :adapter
+      attr_accessor :connection
 
-      def initialize(adapter, dataset)
-        @adapter = adapter
-        @dataset = dataset
+      def initialize(connection, dataset)
+        @connection = connection
+        @dataset    = dataset
       end
 
       def call(data)
-        res = adapter.post("/v1/post/#{dataset}") do |req|
+        res = connection.post("/v1/post/#{dataset}") do |req|
           req.headers['Content-Encoding'] = 'gzip'
           req.headers['Content-Type'] = 'text/plain'
           req.body = data
