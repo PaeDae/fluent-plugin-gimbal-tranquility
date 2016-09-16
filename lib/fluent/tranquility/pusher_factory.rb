@@ -19,7 +19,7 @@ module Fluent
                             interval_randomness: 0.5,
                             backoff_factor:      2
 
-          f.connection :net_http_persistent
+          f.adapter :net_http_persistent
         end
       end
     end
