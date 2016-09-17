@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Fluent::Tranquility::Handler do
+RSpec.describe Fluent::Tranquility::Writer do
   describe '#call' do
     subject { instance.call(chunk) }
 

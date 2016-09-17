@@ -1,6 +1,6 @@
 module Fluent
   module Tranquility
-    class Handler
+    class Writer
       attr_accessor :pusher
 
       def call(chunk)
