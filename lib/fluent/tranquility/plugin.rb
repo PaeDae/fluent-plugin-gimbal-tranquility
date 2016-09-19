@@ -15,8 +15,8 @@ module Fluent
 
       def start
         super
-        @handler = Handler.new.tap do |h|
-          h.pusher = PusherFactory.call(url: @url, dataset: @dataset)
+        @writer = Writer.new.tap do |w|
+          w.pusher = PusherFactory.call(url: @url, dataset: @dataset)
         end
 
         @formatter = Formatter.new
@@ -24,9 +24,9 @@ module Fluent
 
       private
 
-      attr_reader :handler, :formatter
+      attr_reader :writer, :formatter
 
-      def_delegator :handler, :call, :write
+      def_delegator :writer, :call, :write
       def_delegator :formatter, :call, :format
     end
   end
