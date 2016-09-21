@@ -1,6 +1,6 @@
 # Change Log
 
-## [unreleased] - Unreleased
+## [0.1.1] - 2016-09-20
 ### Fixed
 - Plugin Entry point
 
