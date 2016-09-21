@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.1.2] - 2016-09-20
+### Fixed
+- Added the `net-http-persistent` gem dependency
+
 ## [0.1.1] - 2016-09-20
 ### Fixed
 - Plugin Entry point
