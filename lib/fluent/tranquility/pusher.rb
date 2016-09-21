@@ -10,7 +10,6 @@ module Fluent
 
       def call(data)
         res = connection.post("/v1/post/#{dataset}") do |req|
-          req.headers['Content-Encoding'] = 'gzip'
           req.headers['Content-Type'] = 'text/plain'
           req.body = data
         end
