@@ -37,10 +37,5 @@ RSpec.describe Fluent::Tranquility::Pusher do
       expect(headers).to receive(:[]=).with('Content-Type', 'text/plain')
       subject
     end
-
-    it 'sets the request Content-Encoding to gzip' do
-      expect(headers).to receive(:[]=).with('Content-Encoding', 'gzip')
-      subject
-    end
   end
 end

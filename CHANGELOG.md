@@ -1,10 +1,14 @@
 # Change Log
 
-## [0.1.2] - 2016-09-20
+## [0.1.3] - 2016-09-21
+### Fixed
+- Removed GZIP content encoding
+
+## [0.1.2] - 2016-09-21
 ### Fixed
 - Added the `net-http-persistent` gem dependency
 
-## [0.1.1] - 2016-09-20
+## [0.1.1] - 2016-09-21
 ### Fixed
 - Plugin Entry point
 
