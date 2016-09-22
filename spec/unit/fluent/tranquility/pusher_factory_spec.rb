@@ -4,7 +4,11 @@ RSpec.describe Fluent::Tranquility::PusherFactory do
   describe '.call' do
     subject { described_class.call(params) }
 
-    let(:params) { { url: 'http://example.com', dataset: 'DATASET' } }
+    let(:params) do
+      { url: 'http://example.com',
+        dataset: 'DATASET',
+        retries: {} }
+    end
 
     let(:pusher) { instance_double(Fluent::Tranquility::Pusher) }
     let(:connection) { instance_double(Faraday::Connection) }
@@ -30,7 +34,7 @@ RSpec.describe Fluent::Tranquility::PusherFactory do
 
     it "sets up the connection's retry policy" do
       retry_params = { max:                 5,
-                       interval:            0.1,
+                       interval:            1,
                        interval_randomness: 0.5,
                        backoff_factor:      2 }
 

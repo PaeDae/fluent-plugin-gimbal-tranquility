@@ -1,5 +1,9 @@
 # Change Log
 
+## [Unreleased] - unreleased
+### Added
+- Retry configuration
+
 ## [0.1.3] - 2016-09-21
 ### Fixed
 - Removed GZIP content encoding
