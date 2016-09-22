@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased] - unreleased
+## [0.2.0] - 2016-09-22
 ### Added
 - Retry configuration
 
