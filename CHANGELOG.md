@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.3] - 2016-09-22
+### Fix
+- Fix Plugin initialization
+
 ## [0.2.2] - 2016-09-22
 ### Fix
 - Fix retry exceptions
