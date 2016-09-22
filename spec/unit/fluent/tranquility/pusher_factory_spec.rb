@@ -5,10 +5,10 @@ RSpec.describe Fluent::Tranquility::PusherFactory do
     subject { described_class::EXCEPTIONS }
 
     let(:expected) do
-      [Errno::ETIMEDOUT,
-       Faraday::TimeoutError,
-       Faraday::Error::TimeoutError,
-       Net::ReadTimeout]
+      %w(Errno::ETIMEDOUT
+         Faraday::TimeoutError
+         Faraday::Error::TimeoutError
+         Net::ReadTimeout)
     end
 
     it { is_expected.to eq(expected) }

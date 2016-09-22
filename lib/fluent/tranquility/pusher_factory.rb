@@ -1,10 +1,10 @@
 module Fluent
   module Tranquility
     class PusherFactory
-      EXCEPTIONS = [Errno::ETIMEDOUT,
-                    Faraday::TimeoutError,
-                    Faraday::Error::TimeoutError,
-                    Net::ReadTimeout].freeze
+      EXCEPTIONS = %w(Errno::ETIMEDOUT
+                      Faraday::TimeoutError
+                      Faraday::Error::TimeoutError
+                      Net::ReadTimeout).freeze
 
       def self.call(*args)
         new.call(*args)

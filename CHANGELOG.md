@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.2] - 2016-09-22
+### Fix
+- Fix retry exceptions
+
 ## [0.2.1] - 2016-09-22
 ### Fix
 - Retry methods and exceptions
