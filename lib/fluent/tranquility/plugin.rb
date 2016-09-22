@@ -23,7 +23,7 @@ module Fluent
       def start
         super
         @writer = Writer.new.tap do |w|
-          w.pusher = PusherFactory.call(url: @url, dataset: @dataset)
+          w.pusher = PusherFactory.call(url: @url, dataset: @dataset, retries: @retries)
         end
 
         @formatter = Formatter.new
