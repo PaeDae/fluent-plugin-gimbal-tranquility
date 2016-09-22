@@ -1,6 +1,11 @@
 module Fluent
   module Tranquility
     class PusherFactory
+      EXCEPTIONS = [Errno::ETIMEDOUT,
+                    Faraday::TimeoutError,
+                    Faraday::Error::TimeoutError,
+                    Net::ReadTimeout].freeze
+
       def self.call(*args)
         new.call(*args)
       end
@@ -17,7 +22,9 @@ module Fluent
           f.request :retry, max:                 options.fetch(:max, 5),
                             interval:            options.fetch(:interval, 1),
                             interval_randomness: options.fetch(:interval_randomness, 0.5),
-                            backoff_factor:      options.fetch(:backoff_factor, 2)
+                            backoff_factor:      options.fetch(:backoff_factor, 2),
+                            methods:             %w(post),
+                            exceptions:          EXCEPTIONS
 
           f.adapter :net_http_persistent
         end
