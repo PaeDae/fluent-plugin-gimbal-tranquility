@@ -1,6 +1,19 @@
 require 'spec_helper'
 
 RSpec.describe Fluent::Tranquility::PusherFactory do
+  describe 'EXCEPTIONS' do
+    subject { described_class::EXCEPTIONS }
+
+    let(:expected) do
+      [Errno::ETIMEDOUT,
+       Faraday::TimeoutError,
+       Faraday::Error::TimeoutError,
+       Net::ReadTimeout]
+    end
+
+    it { is_expected.to eq(expected) }
+  end
+
   describe '.call' do
     subject { described_class.call(params) }
 
@@ -36,7 +49,9 @@ RSpec.describe Fluent::Tranquility::PusherFactory do
       retry_params = { max:                 5,
                        interval:            1,
                        interval_randomness: 0.5,
-                       backoff_factor:      2 }
+                       backoff_factor:      2,
+                       methods:             %w(post),
+                       exceptions:          described_class::EXCEPTIONS }
 
       expect(connection).to receive(:request).with(:retry, retry_params)
       subject
