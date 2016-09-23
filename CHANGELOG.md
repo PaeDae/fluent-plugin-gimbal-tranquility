@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased] - unreleased
+## [0.3.0] - 2016-09-23
 ### Added
 - Higher push timeouts
 - Async push
