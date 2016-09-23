@@ -12,6 +12,8 @@ RSpec.describe Fluent::Tranquility::Pusher do
     let(:request) { instance_double(Faraday::Request) }
     let(:response) { instance_double(Faraday::Response) }
     let(:headers) { instance_double(Hash) }
+    let(:params) { instance_double(Hash) }
+    let(:options) { double }
 
     before do
       allow(connection).to receive(:post).and_return(response).and_yield(request)
@@ -19,6 +21,11 @@ RSpec.describe Fluent::Tranquility::Pusher do
       allow(request).to receive(:headers).and_return(headers)
       allow(request).to receive(:body=)
       allow(headers).to receive(:[]=)
+      allow(request).to receive(:params).and_return(params)
+      allow(params).to receive(:[]=)
+      allow(request).to receive(:options).and_return(options)
+      allow(options).to receive(:timeout=)
+      allow(options).to receive(:open_timeout=)
     end
 
     it { is_expected.to eq(true) }
@@ -35,6 +42,21 @@ RSpec.describe Fluent::Tranquility::Pusher do
 
     it 'sets the request Content-Type to text/plain' do
       expect(headers).to receive(:[]=).with('Content-Type', 'text/plain')
+      subject
+    end
+
+    it 'sets the request as async' do
+      expect(params).to receive(:[]=).with('async', true)
+      subject
+    end
+
+    it 'sets the request timeout' do
+      expect(options).to receive(:timeout=).with(60)
+      subject
+    end
+
+    it 'sets the request connection open timeout' do
+      expect(options).to receive(:open_timeout=).with(60)
       subject
     end
   end

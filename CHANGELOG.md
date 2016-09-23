@@ -1,5 +1,10 @@
 # Change Log
 
+## [Unreleased] - unreleased
+### Added
+- Higher push timeouts
+- Async push
+
 ## [0.2.3] - 2016-09-22
 ### Fix
 - Fix Plugin initialization
