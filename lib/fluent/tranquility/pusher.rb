@@ -12,6 +12,9 @@ module Fluent
         res = connection.post("/v1/post/#{dataset}") do |req|
           req.headers['Content-Type'] = 'text/plain'
           req.body = data
+          req.params['async'] = true
+          req.options.timeout = 60
+          req.options.open_timeout = 60
         end
 
         res.success?
