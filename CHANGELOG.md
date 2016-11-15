@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.3.1] - 2016-11-15
+### Fixed
+- Locks gem versions
+
 ## [0.3.0] - 2016-09-23
 ### Added
 - Higher push timeouts
