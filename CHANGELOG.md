@@ -1,11 +1,15 @@
 # Change Log
 
+## Unreleased
+### Change
+- Rename plugin
+
 ## [0.3.1] - 2016-11-15
-### Fixed
+### Fix
 - Locks gem versions
 
 ## [0.3.0] - 2016-09-23
-### Added
+### Add
 - Higher push timeouts
 - Async push
 
@@ -22,21 +26,21 @@
 - Retry methods and exceptions
 
 ## [0.2.0] - 2016-09-22
-### Added
+### Add
 - Retry configuration
 
 ## [0.1.3] - 2016-09-21
-### Fixed
+### Fix
 - Removed GZIP content encoding
 
 ## [0.1.2] - 2016-09-21
-### Fixed
+### Fix
 - Added the `net-http-persistent` gem dependency
 
 ## [0.1.1] - 2016-09-21
-### Fixed
+### Fix
 - Plugin Entry point
 
 ## [0.1.0] - 2016-09-19
-### Added
+### Add
 - Single-point dataset pushing to a Tranquility backend

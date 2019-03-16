@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fluent/tranquility/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fluent-tranquility'
+  spec.name          = 'fluent-plugin-gimbal-tranquility'
   spec.version       = Fluent::Tranquility::VERSION
   spec.authors       = ['Marcelo Wiermann']
   spec.email         = ['marcelo.wiermann@gmail.com']
