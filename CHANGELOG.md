@@ -1,6 +1,6 @@
 # Change Log
 
-## Unreleased
+## [0.4.0] - 2019-03-15
 ### Change
 - Rename plugin
 
