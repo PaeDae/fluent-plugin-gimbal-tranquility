@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.4.1] - 2019-03-28
+### Fix
+- Fix formatter to force conversion to UTF-8 in case of bad charset exception
+
 ## [0.4.0] - 2019-03-15
 ### Change
 - Rename plugin
