@@ -18,9 +18,9 @@ Gem::Specification.new do |spec|
                        .split("\x0")
                        .reject { |f| f.match(%r{^(test|spec|features)/}) }
 
-  spec.add_runtime_dependency 'fluentd', ['>= 0.14.15', '< 2']
-  spec.add_runtime_dependency 'faraday', '0.15.4'
-  spec.add_runtime_dependency 'net-http-persistent', '2.9.4'
+  spec.add_runtime_dependency 'faraday', '~> 0.10'
+  spec.add_runtime_dependency 'fluentd', '~> 0.12'
+  spec.add_runtime_dependency 'net-http-persistent', ['>= 2.9', '< 3']
 
   spec.add_development_dependency 'bundler', '~> 1.12'
   spec.add_development_dependency 'rake', '~> 10.0'
